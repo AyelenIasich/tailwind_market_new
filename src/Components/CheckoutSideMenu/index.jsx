@@ -1,16 +1,22 @@
 import React, { useContext } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ShoppingCardContext } from "../../Context/index";
+import { totalPrice } from "../../utils/index";
 import OrderCard from "../OrderCard";
 import "./styles.css";
 
 function CheckoutSideMenu() {
-  const { isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts , setCartProducts} = useContext(ShoppingCardContext);
+  const {
+    isCheckoutSideMenuOpen,
+    closeCheckoutSideMenu,
+    cartProducts,
+    setCartProducts,
+  } = useContext(ShoppingCardContext);
 
-  const handleDelete = (id) =>{
-    const filteredProducts = cartProducts.filter((product)=>product.id != id);
+  const handleDelete = (id) => {
+    const filteredProducts = cartProducts.filter((product) => product.id != id);
     setCartProducts(filteredProducts);
-  }  
+  };
 
   return (
     <aside
@@ -27,8 +33,20 @@ function CheckoutSideMenu() {
       </div>
       <div className="px-6">
         {cartProducts.map((cartProduct) => (
-          <OrderCard {...cartProduct} key={cartProduct.id} handleDelete={handleDelete}/>
+          <OrderCard
+            {...cartProduct}
+            key={cartProduct.id}
+            handleDelete={handleDelete}
+          />
         ))}
+      </div>
+      <div className="px-6">
+        <p className="flex justify-between items-center">
+          <span className="font-light">Total:</span>
+          <span className="font-medium text-2xl">
+            ${totalPrice(cartProducts)}
+          </span>
+        </p>
       </div>
     </aside>
   );

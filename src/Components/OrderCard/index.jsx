@@ -1,5 +1,6 @@
 import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import "./styles.css"
 
 function OrderCard(props) {
 
@@ -15,10 +16,10 @@ function OrderCard(props) {
             className="w-full h-full rounded-lg object-cover"
           />
         </figure>
-        <p className="text-sm font-light">{title}</p>
+        <p className="text-sm font-light  max-w-[8rem] ">{title}</p>
       </div>
       <div className="flex items-center gap-2 pe-2">
-        <p className="text-lg font-medium">$ {price}</p>
+        <p className="text-lg font-medium ">$ {price}</p>
         <XMarkIcon
           className="size-6 text-slate-600  cursor-pointer"
           onClick={()=>handleDelete(id)}
