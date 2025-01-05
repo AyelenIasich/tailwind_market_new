@@ -6,10 +6,10 @@ function Navbar() {
   const activeStyle = "underline underline-offset-4";
 
   return (
-    <nav className="flex justify-between items-center fixed top-0 z-1 w-full py-5 px-8 text-sm font-light">
+    <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-sm font-light bg-white">
       <ul className="flex items-center gap-3">
         {linksNavbarLeft.map((linkNav, index) => (
-          <li className={linkNav.className}>
+          <li className={linkNav.className} key={index}>
             <NavLink
               to={linkNav.path}
               className={({ isActive }) =>
@@ -22,8 +22,8 @@ function Navbar() {
         ))}
       </ul>
       <ul className="flex items-center gap-3">
-        {linksNavbarRight.map((linkNav) => (
-          <li className={linkNav.className}>
+        {linksNavbarRight.map((linkNav, index) => (
+          <li className={linkNav.className} key={index}>
             {linkNav.path ? (
               <NavLink
                 to={linkNav.path}
