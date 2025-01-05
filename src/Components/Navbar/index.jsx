@@ -14,13 +14,13 @@ function Navbar() {
 
   return (
     <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-sm font-light bg-white shadow-md">
+    
+      {/* Desktop Left Links */}
       <div className="flex items-center">
         {/* Logo or Brand */}
         <div className="text-lg font-semibold pe-3">
           <NavLink to="/">TailShop</NavLink>
         </div>
-
-        {/* Desktop Left Links */}
         <DesktopNavLinks links={linksNavbarLeft} activeStyle={activeStyle} />
       </div>
 
@@ -29,7 +29,7 @@ function Navbar() {
 
       {/* Hamburger Menu Button */}
       <button
-        className="md:hidden flex items-center text-lg"
+        className="lg:hidden flex items-center text-lg"
         onClick={toggleMenu}
       >
         ☰
