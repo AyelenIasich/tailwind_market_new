@@ -30,7 +30,7 @@ function ProductDetail() {
           />
         </figure>
         <p className="flex flex-col py-3">
-          <span className="font-medium text-2xl">{price}</span>
+          <span className="font-medium text-2xl">$ {price}</span>
           <span className="font-medium text-md">{title}</span>
           <span className="font-light text-sm">{description}</span>
         </p>

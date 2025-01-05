@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Card from "../../Components/Card";
 import { apiUrl } from "../../api";
+import Card from "../../Components/Card";
 import ProductsList from "../../Components/ProductsList";
 import CardSkeleton from "../../Components/CardSkeleton";
 import ProductDetail from "../../Components/ProductDetail";
@@ -32,7 +32,6 @@ function Home() {
   return (
     <>
       <ProductDetail />
-
       <ProductsList
         loading={loading}
         products={items}

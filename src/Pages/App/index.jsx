@@ -5,9 +5,10 @@ import MyOrder from "../MyOrder";
 import MyOrders from "../MyOrders";
 import NotFound from "../NotFound";
 import SignIn from "../SingIn";
-import "./App.css";
 import Navbar from "../../Components/Navbar";
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 import { ShoppingCardProvider } from "../../Context";
+import "./App.css";
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -27,6 +28,7 @@ function App() {
     <ShoppingCardProvider>
       <BrowserRouter>
         <Navbar />
+        <CheckoutSideMenu />
         <AppRoutes />
       </BrowserRouter>
     </ShoppingCardProvider>
