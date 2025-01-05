@@ -7,7 +7,7 @@ function MenuItem({ path, routeName, className, activeStyle, onClose }) {
       {path ? (
         <NavLink
           to={path}
-          className={({ isActive }) => (isActive ? `${activeStyle} text-blue-500` : undefined)}
+          className={({ isActive }) => (isActive ? `${activeStyle} text-slate-500` : undefined)}
           onClick={onClose}
         >
           {routeName}

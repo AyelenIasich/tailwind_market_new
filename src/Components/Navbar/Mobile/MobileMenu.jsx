@@ -1,7 +1,14 @@
 import React from "react";
 import MenuSection from "./MenuSection";
+import ChartItem from "../../ChartItem";
 
-function MobileMenu({ isOpen, linksNavbarLeft, linksNavbarRight, activeStyle, onClose }) {
+function MobileMenu({
+  isOpen,
+  linksNavbarLeft,
+  linksNavbarRight,
+  activeStyle,
+  onClose,
+}) {
   if (!isOpen) return null;
 
   return (
@@ -14,13 +21,14 @@ function MobileMenu({ isOpen, linksNavbarLeft, linksNavbarRight, activeStyle, on
           onClose={onClose}
           borderBottom
         />
-        
+
         {/* Right Section */}
         <MenuSection
           links={linksNavbarRight}
           activeStyle={activeStyle}
           onClose={onClose}
         />
+        <ChartItem />
       </ul>
     </div>
   );

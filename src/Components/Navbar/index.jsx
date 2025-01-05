@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import MobileMenu from "./MobileMenu";
-import DesktopNavLinks from "./DesktopNavLinks";
+import MobileMenu from "./Mobile/MobileMenu";
+import DesktopNavLinks from "./Desktop/DesktopNavLinks";
 import { linksNavbarLeft, linksNavbarRight } from "./links";
 
 function Navbar() {
@@ -25,7 +25,7 @@ function Navbar() {
       </div>
 
       {/* Desktop Right Links */}
-      <DesktopNavLinks links={linksNavbarRight} activeStyle={activeStyle} />
+      <DesktopNavLinks links={linksNavbarRight} activeStyle={activeStyle} isChartLink={true}/>
 
       {/* Hamburger Menu Button */}
       <button

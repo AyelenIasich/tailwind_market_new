@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../../Components/Layout";
 import Card from "../../Components/Card";
 import { apiUrl } from "../../api";
 import ProductsList from "../../Components/ProductsList";
 import CardSkeleton from "../../Components/CardSkeleton";
+import ProductDetail from "../../Components/ProductDetail";
 
 function Home() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,17 +30,21 @@ function Home() {
   }, []);
 
   return (
-    <ProductsList
-      loading={loading}
-      products={items}
-      onLoading={() => (
-      Array.from({ length: 8 }).map((_, index) => (
-        <CardSkeleton key={index} />
-      ))
-    )}
-    >
-      {(product) => <Card key={product.id} {...product} />}
-    </ProductsList>
+    <>
+      <ProductDetail />
+
+      <ProductsList
+        loading={loading}
+        products={items}
+        onLoading={() =>
+          Array.from({ length: 8 }).map((_, index) => (
+            <CardSkeleton key={index} />
+          ))
+        }
+      >
+        {(product) => <Card key={product.id} {...product} />}
+      </ProductsList>
+    </>
   );
 }
 

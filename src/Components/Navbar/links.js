@@ -12,5 +12,5 @@ export const linksNavbarRight = [
   { className: "", path: "/my-orders", routeName: "My Orders" },
   { className: "", path: "/my-account", routeName: "My Account" },
   { className: "", path: "/sign-in", routeName: "Sing In" },
-  { className: "", routeName: "🛒 0" },
+ 
 ];
