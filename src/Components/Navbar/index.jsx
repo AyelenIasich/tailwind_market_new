@@ -19,7 +19,7 @@ function Navbar() {
       <div className="flex items-center">
         {/* Logo or Brand */}
         <div className="text-lg font-semibold pe-3">
-          <NavLink to="/">TailShop</NavLink>
+          <NavLink to="/" className="text-slate-600 ">TailShop</NavLink>
         </div>
         <DesktopNavLinks links={linksNavbarLeft} activeStyle={activeStyle} />
       </div>

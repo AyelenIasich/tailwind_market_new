@@ -42,7 +42,7 @@ function Home() {
           ))
         }
       >
-        {(product) => <Card key={product.id} {...product} />}
+        {(product) => <Card key={product.id} product={product} />}
       </ProductsList>
     </>
   );
